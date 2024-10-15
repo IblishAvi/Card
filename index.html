@@ -10,27 +10,30 @@
 
   <div id="wrapper ">
     <div class="container ">
-      <p class="hero " ><img  class="hero-img" src="/Card/OIP (8).jpeg" alt="">  </p>
-        <div class="hero-img-section" ><img  class="hero-img2" src="/Card/OIP (2).jpeg" alt="">
-        <img class="hero-img3" src="/Card/R.jpeg" alt="">
+      <p class="hero " ><img  class="hero-img" src="./image/OIP (8).jpeg" alt="">  </p>
+        <div class="hero-img-section" ><img  class="hero-img2" src="./image/OIP (2).jpeg" alt="">
+        <img class="hero-img3" src="./image/R.jpeg" alt="">
       </div>
         
         <div >
-          <div>
-                      <h1 class="invite"><b><i>Wedding Invitation <br>Date:-27/11/2024</i></b></h1>
+          <div >
+            <div onfocus="startInterval()">
+              <h1  class="invite"  ><b><i>Wedding Invitation <br>Date:-27/11/2024</i></b></h1>
 
-            <div class="Bride">
-              <div class="BrideImg"><img class="Bride_img"  src="/Card/sapna.jpg" alt=""></div>
+            </div>
+
+            <div class="Bride"  onmouseover="startInterval()" >
+              <div class="BrideImg"><img class="Bride_img"  src="./image/sapna.jpg" alt=""></div>
               <div class="bride_details">
                 <p >Sapna Mishra</p>
                 <p >D/O:-Babita Mishra &<br> Prakash Chandra Mishra</p>
                 <p >Add:-Hajipur</p> 
               </div>
             </div>  
-            <img class="weds" src="/Card/OIP (4).jpeg" alt="Weds">
+            <img class="weds" src="./image/OIP (4).jpeg" alt="Weds">
             <p class=""></p>
-            <div class="Groom ">
-              <div ><img class="Groom_img"  src="/Card/Navin.jpg" alt=""></div>
+            <div class="Groom " onmouseover="startInterval()" >
+              <div ><img class="Groom_img"   src="./image/Navin.jpg" alt=""></div>
               <div class="Groom_details">
                 <p>Naveen Kumar Jha</p>
                 <p>S/O:-Meenu Jha & <br> Pramod Jha</p>
@@ -39,11 +42,12 @@
             </div>
           </div>
           <div class="final-img">
-            <img class="final-img1" src="/Card/OIP (7).jpeg" alt="">
-            <img class="final-img2" src="/Card/OIP (1).jpeg" alt="">
-            <div class="venue-detail">
+            <img class="final-img1" src="./image/OIP (7).jpeg" alt="">
+            <img class="final-img2" src="image/OIP (1).jpeg" alt="">
+            <div class="venue-detail"  onmouseover="startInterval()" >
               <h2><u>Venue</u></h2>
-              <p >Chanakya palace ,Marai Chowk(Hajipur)</p>
+              <p >Chanakya palace ,Marai Chowk(Hajipur) <br>
+              Time:-7:00 Date:-27/10/24</p>
             
             </div>
           </div>
@@ -54,7 +58,59 @@
   </div>
     
     
+<script>
+  
+  
+  
+  
+
+
+  const randomColor = () =>{
+    const hex = '0123456789ABCDEF';
+    color = '#';
+    for (let index = 0; index < 6; index++) {
+      color+= hex[Math.floor(Math.random()*16)];
+      
+    }
+    return color;
+
+  }
+  
+  const   startInterval =function (){
+      const bride = document.querySelector('.Bride');
+    const Groom = document.querySelector('.Groom');
+    const invite = document.querySelector('.invite');
+    const venue = document.querySelector('.venue-detail')
+
     
+    
+
+
+    setInterval(changeBgColor,3000);
+
+    function  changeBgColor(){
+      if(!onmousemove){
+        bride.style.backgroundColor = randomColor();
+      Groom.style.backgroundColor = randomColor();
+      }
+     
+      
+
+          }
+       setInterval(changeBgColor2,100);
+
+      function  changeBgColor2(){
+      invite.style.backgroundColor = randomColor();
+      venue.style.backgroundColor = randomColor();
+
+     
+     
+
+
+          }
+      }
+document.addEventListener("onmouseenter",startInterval);
+</script>
     
 </body>
 </html>
